@@ -35,11 +35,19 @@
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
+    <script language="javascript" type="text/javascript">
+        function init()
+        {
+            websocket = new WebSocket("ws://"+window.location.host+"/websocket");
+            websocket.onmessage = function(evt) { location.reload(); };
+        }
+        window.addEventListener("load", init, false);
+    </script>
 </head>
 <body>
     <div class="reveal">
         <div class="tip" id="fs1">val company : string<br /><br />Full name: index.company</div>
-<div class="tip" id="fs2">val descritpion : string<br /><br />Full name: index.descritpion</div>
+<div class="tip" id="fs2">val services : string list<br /><br />Full name: index.services</div>
 <div class="tip" id="fs3">val contact : (string * string) list<br /><br />Full name: index.contact</div>
 
         <!-- Any section element inside of this container is displayed as a slide -->
@@ -60,15 +68,15 @@
 <span class="l">12: </span>
 <span class="l">13: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="i">company</span> <span class="o">=</span> <span class="s">&quot;Metaintellect vl. Kornelije Sajler&quot;</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">company</span> <span class="o">=</span> <span class="s">&quot;Metaintellect vl. Kornelije Sajler&quot;</span>
 
-<span class="k">let</span> <span class="i">descritpion</span> <span class="o">=</span>  <span class="s">&quot;&quot;&quot;</span>
-<span class="s">- Software development.</span>
-<span class="s">- Cloud infrastructure.</span>
-<span class="s">- Software and requirements consulting.</span>
-<span class="s">&quot;&quot;&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">services</span> <span class="o">=</span> [
+  <span class="s">&quot;Software development&quot;</span>
+  <span class="s">&quot;Cloud infrastructure&quot;</span>
+  <span class="s">&quot;Software and requirements consulting&quot;</span>
+]
 
-<span class="k">let</span> <span class="i">contact</span> <span class="o">=</span> [
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">contact</span> <span class="o">=</span> [
     (<span class="s">&quot;mobile&quot;</span>, <span class="s">&quot;+385 97 666 9357&quot;</span>)
     (<span class="s">&quot;email&quot;</span>, <span class="s">&quot;ks@metaintellect.com&quot;</span>)
     (<span class="s">&quot;address&quot;</span>, <span class="s">&quot;Humski put 14, Rijeka, Croatia&quot;</span>)
