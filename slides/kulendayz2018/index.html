@@ -1,0 +1,570 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>\m/Pifkan\m/</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+    <style>
+    body {
+      background-image: url("kulendayz/image3.png");
+      background-repeat: no-repeat;
+      background-size: 80px 87px;
+      background-position: left 30px top 20px;
+    }
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+        <section data-background-color="#000000"><img src="kulendayz/image1.gif" style="border: 0;" /></section>
+
+        <section data-background-color="#000000" data-background-image="kulendayz/sponsors.png"></section>
+
+<!-- start serverless computing -->
+        <section>
+          <section><h1>Serverless computing</h1></section>
+          <section data-markdown>
+            <textarea data-template>
+Serverless computing is a category of cloud computing service that is nearly entirely hands-off and where you really do only pay for what you use.
+
+With serverless computing there is no virtual infrastructure for the user to manage and the user is only billed for when their code is running, down to the nearest 100 milliseconds.
+            </textarea>
+          </section>
+
+          <section data-markdown>
+            <textarea data-template>
+### What is serverless computing?
+
+Services that run snippets of back-end code for apps and websites without any overhead of managing servers.
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+### Why does serverless computing matter?
+
+Serverless computing services reduce the overhead and cost of managing either physical or virtual infrastructure.
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+### Who does serverless computing affect?
+
+Businesses running websites and apps with a need for back-end services or analytics.
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+### When is serverless computing happening?
+
+Now—all of the major cloud platform providers offer a serverless computing service.
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+### How can I get serverless computing?
+
+Via your cloud platform of choice. Serverless computing is available via AWS, Google Cloud Platform, Microsoft Azure and IBM Bluemix.
+            </textarea>
+          </section>
+
+        </section>
+<!-- end serverless computing -->
+
+
+<!-- start aws lambda -->
+        <section>
+            <section data-markdown>
+              <textarea data-template>
+# AWS Lambda
+              </textarea>
+            </section>
+          <section data-markdown>
+            <textarea data-template>
+## Features
+
+* Built-in fault tolerance
+    * maintains compute capacity across multiple Availability Zones
+    * predictable and reliable operational performance.
+    * No maintenance windows or scheduled downtimes.
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+  ## Suported Runtimes
+
+* Node.js — v8.10, v6.10 (nodjs, ECMAScript, typescript)
+* Python — 3.6, 2.7
+* Java — Java 8 (java, scala, kotlin, groovy, cloujure)
+* .NET Core — .NET Core 1.0.1, 2.0, 2.1 (F#, C#)
+* Go — Go 1.x
+* [Scripting Languages](https://aws.amazon.com/blogs/compute/scripting-languages-for-aws-lambda-running-php-ruby-and-go/) — (PHP, ruby, go)
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+  ## Features
+
+  * Automatic scaling
+  * Orchestrate multiple functions (AWS Step Functions)
+  * Integrated security model (IAM, VPC)
+  * Pay per use (metered in increments of 100 milliseconds)
+  * Flexible resource model (Setup only memory, allocates proportional CPU power, network bandwidth, and disk I/O)
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+  ## Cons
+
+  * Hard to debug (reading logs)
+  * Unable to install or configure other than available on server (Amazon Linux)
+  * AWS Console
+            </textarea>
+          </section>
+        </section>
+<!-- end aws lambda -->
+
+
+<!-- start serverless framework -->
+        <section>
+          <section><h1>Serverless Framework</h1></section>
+          <section data-markdown>
+            <textarea data-template>
+* Provider Agnostic — Build serverless applications quickly on any vendor.
+* CLI for building and deploying serverless applications.
+* Infrastructure As Code
+* ALM — support for local development, stages, rollback
+* Open source
+
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## Installation
+
+```bash
+# Installing the serverless cli
+npm install -g serverless
+
+# Updating serverless from a previous version of serverless
+npm install -g serverless
+
+# Login to the serverless platform (optional)
+serverless login
+
+# shorthand name (Not sure if available on Windows)
+# No problem for any *nix (including macOS)
+sls --version
+```
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## Setup AWS credentials
+
+```bash
+# No need for those having .aws/credentials file
+# Test on all *nix like OS's (including macOS)
+# On windows test existence of file:
+# C:\Users\<username>\.aws\credentials
+cat $HOME/.aws/credentials
+
+# Add your own <key> and <secret>
+serverless config credentials --provider aws --key <key> \
+   --secret <secret>
+```
+
+[Read more on AWS - Credentials](https://serverless.com/framework/docs/providers/aws/guide/credentials/)
+            </textarea>
+          </section>
+        </section>
+<!-- end serverless framework -->
+
+<!-- start serverless framework cli -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              ### Serverless Framework
+
+              # [CLI](https://serverless.com/framework/docs/providers/aws/cli-reference)
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## CLI Used for this course
+
+* [config credentials](https://serverless.com/framework/docs/providers/aws/cli-reference/config-credentials/) (used for aws credentials)
+* [create](https://serverless.com/framework/docs/providers/aws/cli-reference/create/)
+* [deploy](https://serverless.com/framework/docs/providers/aws/cli-reference/deploy/)
+* [remove](https://serverless.com/framework/docs/providers/aws/cli-reference/remove/)
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## create
+
+
+```bash
+# Create AWS function from nodejs tepmlate
+# If path not specified will create current dir!
+# By default is
+serverless create --template aws-nodejs --path <path>
+
+# python3 version
+serverless create --template aws-python3 --path <path>
+
+# Maybe some other language, list available templates:
+sls create --help
+```
+
+[Reference link](https://serverless.com/framework/docs/providers/aws/cli-reference/create/)
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## deploy
+
+Deploys AWS and creates all specified resources, IAM roles and more via CloudFormation. Possibilty to specify stage and region.
+
+```bash
+# deploys to AWS
+serverless deploy
+
+# deploys to AWS production stage
+serverless deploy --stage production
+```
+
+[Reference link](https://serverless.com/framework/docs/providers/aws/cli-reference/deploy/)
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## remove
+
+Removes all resources created with deploy, possibility to specify stagen and region.
+
+```bash
+serverless remove
+```
+
+[Reference link](https://serverless.com/framework/docs/providers/aws/cli-reference/remove/)
+            </textarea>
+          </section>
+        </section>
+<!-- end serverless framework cli -->
+
+
+<!-- start serverless.yaml -->
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              # serverless YAML
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## service
+
+Name of the service.
+It will part of AWS Lambda name.
+
+```yaml
+service: pifkan-draw-api
+```
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## custom
+
+
+```yaml
+custom:
+  dynamoTable: pifkan-draws-table
+
+# Can be called anywhere in this YAML file by:
+${self:custom.dynamoTable}
+```
+
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## plugins
+
+Extra funcionality to serverless framework by plugins created by community.
+
+
+```yaml
+plugins:
+  - serverless-step-functions
+  - serverless-python-requirements
+```
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## provider
+
+
+```yaml
+provider:
+  name: aws
+  runtime: python3.6
+  stage: dev
+  region: us-east-1
+  profile: xaeon
+  deploymentBucket: ${self:custom.deploymentBucketName}
+  environment:
+    COGNITO_POOL_ID: ${self:custom.cognitoPoolId}
+```
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## provider
+
+### iamRoleStatemnts
+
+
+```yaml
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:PutItem
+      Resource: "arn:aws:dynamodb:us-east-1:*:table/${self:custom.dynamoTable}"
+    - Effect: Allow
+      Action:
+        - cognito-idp:AdminInitiateAuth
+      Resource: "arn:aws:cognito-idp:us-east-1:*:userpool/${self:custom.cognitoPoolId}"
+```
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## resources
+
+Create in AWS resource like DynamoDb, S3, ...
+
+```yaml
+resources:
+  Resources:
+    pifkanDrawTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.dynamoTable}
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: N
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+```
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## functions
+
+
+```yaml
+functions:
+  handler:
+    handler: handler.draw
+    events:
+      - http:
+          path: api/draws
+          method: GET
+      - http:
+          path: api/draws/current
+          method: GET
+  handler2:
+    handler2: handler2.execute
+    environment:
+      DYNAMODB_TABLE: ${self:custom.dynamoTable}
+    events:
+      - schedule: rate(7 days)
+```
+            </textarea>
+          </section>
+        </section>
+<!-- end serverless yaml -->
+
+<!-- start pifkan -->
+        <section>
+          <section><h1>Pifkan</h1></section>
+          </section>
+        </section>
+<!-- end pifkan -->
+
+<!-- start Code Gen Scheduled-->
+        <section>
+          <section><h1>Code Gen Schduled</h1></section>
+          <section data-markdown>
+            <textarea data-template>
+* Generates pifkan codes once in 7 days.
+* Generates 100 codes.
+* Stores generated codes to AWS DynamoDB.
+* Scheduled AWS Lambda process.
+            </textarea>
+          </section>
+        </section>
+<!-- end Code Gen Scheduled -->
+<!-- start -->
+        <section>
+          <section><h1>Users API</h1></section>
+          <section data-markdown>
+            <textarea data-template>
+* Two groups (roles): *user* and *admin*
+* Register User (Only *user* group can be registred)
+* Auth User (authenticates users and sends *refresh token*)
+* AWS Cognito
+            </textarea>
+          </section>
+        </section>
+<!-- end  API -->
+<!-- start Codes API -->
+        <section>
+          <section><h1>Codes API</h1></section>
+          <section data-markdown>
+            <textarea data-template>
+* Get All Generated Codes (only for *admin* role)
+* Get Code by name (for validaton of submitted code)
+* Using AWS DynamoDB table of generated codes.
+            </textarea>
+          </section>
+        </section>
+<!-- end  Codes API -->
+<!-- start Draws API -->
+        <section>
+          <section><h1>Draws API</h1></section>
+          <section data-markdown>
+            <textarea data-template>
+* Draw can be of status: *current* or *done*.
+* Get All *done* Draws (history of previous draws)
+* Get *current* Draw
+* Create Draw
+  * only for *admin* role
+  * mark last draw as *done* and creates new as *current*)
+* Stores all Draws to AWS Dynamo DB
+            </textarea>
+          </section>
+        </section>
+<!-- end  Draws API -->
+<!-- start Draw Codes API-->
+        <section>
+          <section><h1>Draw Codes API</h1></section>
+          <section data-markdown>
+            <textarea data-template>
+* Get All Current Draw Codes
+  * only for *admin*
+  * all submitted codes for *current* draw
+* Submit Code for Draw
+  * code is removed from generated DynamoDB
+* Draw random code
+  * only for *admin*
+  * for logic look in next section
+* Stores submitted codes into new DynamoDB
+* Uses all other DynamoDB's (Generated codes, Draws)
+            </textarea>
+          </section>
+        </section>
+<!-- end  Draw Codes API -->
+
+<!-- start Draw Codes SF-->
+        <section>
+          <section><h1>Draw Codes Step Function</h1></section>
+          <section data-markdown>
+            <textarea data-template>
+* Uses AWS Step Functions (chained lambda functions)
+* Same logic *Draw Codes API* but broken to multiple functions.
+            </textarea>
+          </section>
+          <section>
+            <h2>State Machine</h2>
+            <img src="kulendayz/aws-sf.png" style="border: 0;" />
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+## serverless.yml
+
+Using plugin: *serverless-step-functions*
+
+```yaml
+stepFunctions:
+  stateMachines:
+    Draw Random Code:
+      name: ${self:custom.serviceName}-state-machine
+      definition:
+        Comment: "Draw a code from submitted codes and create new draw."
+        StartAt: Get Draw
+        States:
+          Get Draw:
+            Type: Task
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-get-draw
+            Next: Get Draw Submitted Codes
+```
+            </textarea>
+          </section>
+        </section>
+<!-- end  Draw Codes SF -->
+
+          <section data-markdown>
+            <textarea data-template>
+            </textarea>
+          </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.configure({
+        keyboard: {
+          72: 'left',
+          83: 'right',
+          75: 'up',
+          74: 'down',
+        }
+      });
+			Reveal.initialize({
+        controlsBackArrows: 'visible',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
+
+<!--
+
+          <section data-markdown>
+            <textarea data-template>
+            </textarea>
+          </section>
+-->
